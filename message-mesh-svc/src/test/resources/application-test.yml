@@ -1,0 +1,25 @@
+# Integration-test profile: fast in-memory H2, deterministic JWT secret.
+spring:
+  datasource:
+    url: jdbc:h2:mem:chattest;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: false
+  h2:
+    console:
+      enabled: false
+
+app:
+  jwt:
+    secret: test-only-secret-key-that-is-long-enough-to-be-valid-32b+
+    expiration-ms: 86400000
+
+logging:
+  level:
+    root: WARN
+    com.message.mesh: INFO

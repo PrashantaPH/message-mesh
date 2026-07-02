@@ -1,0 +1,18 @@
+# Maven build output
+target/
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+
+# Logs
+*.log
+
+# Local runtime data (H2, etc.)
+data/*.db
+data/*.mv.db
+data/*.trace.db
