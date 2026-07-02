@@ -1,15 +1,24 @@
-name: CI
+name: Backend CI
 
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'message-mesh-svc/**'
+      - '.github/workflows/backend-ci.yml'
   pull_request:
     branches: [ main ]
+    paths:
+      - 'message-mesh-svc/**'
+      - '.github/workflows/backend-ci.yml'
 
 jobs:
   build:
     name: Build & Test (Maven / Java 21)
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: message-mesh-svc
 
     steps:
       - name: Checkout
@@ -30,7 +39,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: jacoco-report
-          path: target/site/jacoco/
+          path: message-mesh-svc/target/site/jacoco/
           if-no-files-found: ignore
 
       - name: Upload Surefire test reports
@@ -38,5 +47,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: surefire-reports
-          path: target/surefire-reports/
+          path: message-mesh-svc/target/surefire-reports/
           if-no-files-found: ignore
