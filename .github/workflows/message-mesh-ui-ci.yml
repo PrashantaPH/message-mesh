@@ -1,4 +1,4 @@
-name: Frontend CI
+name: Message Mesh UI CI
 
 on:
   push:
@@ -6,6 +6,7 @@ on:
     paths:
       - 'message-mesh-ui/**'
       - '.github/workflows/message-mesh-ui-ci.yml'
+
   pull_request:
     branches: [ main ]
     paths:
@@ -14,8 +15,9 @@ on:
 
 jobs:
   build:
-    name: Lint & Build (Vite / Node)
+    name: "Lint & Build Vite Node"
     runs-on: ubuntu-latest
+
     defaults:
       run:
         working-directory: message-mesh-ui
@@ -47,3 +49,4 @@ jobs:
           name: dist
           path: message-mesh-ui/dist/
           if-no-files-found: ignore
+          retention-days: 7

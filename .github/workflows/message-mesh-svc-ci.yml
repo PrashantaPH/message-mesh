@@ -1,4 +1,4 @@
-name: Backend CI
+name: Message Mesh Service CI
 
 on:
   push:
@@ -6,6 +6,7 @@ on:
     paths:
       - 'message-mesh-svc/**'
       - '.github/workflows/message-mesh-svc-ci.yml'
+
   pull_request:
     branches: [ main ]
     paths:
@@ -14,8 +15,9 @@ on:
 
 jobs:
   build:
-    name: Build & Test (Maven / Java 21)
+    name: "Build & Test Maven Java 21"
     runs-on: ubuntu-latest
+
     defaults:
       run:
         working-directory: message-mesh-svc
@@ -31,7 +33,7 @@ jobs:
           java-version: '21'
           cache: maven
 
-      - name: Build & test
+      - name: "Build & Test"
         run: mvn -B verify
 
       - name: Upload JaCoCo coverage report
