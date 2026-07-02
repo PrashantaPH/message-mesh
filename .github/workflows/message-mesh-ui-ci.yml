@@ -5,12 +5,12 @@ on:
     branches: [ main ]
     paths:
       - 'message-mesh-ui/**'
-      - '.github/workflows/frontend-ci.yml'
+      - '.github/workflows/message-mesh-ui-ci.yml'
   pull_request:
     branches: [ main ]
     paths:
       - 'message-mesh-ui/**'
-      - '.github/workflows/frontend-ci.yml'
+      - '.github/workflows/message-mesh-ui-ci.yml'
 
 jobs:
   build:

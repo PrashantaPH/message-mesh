@@ -5,12 +5,12 @@ on:
     branches: [ main ]
     paths:
       - 'message-mesh-svc/**'
-      - '.github/workflows/backend-ci.yml'
+      - '.github/workflows/message-mesh-svc-ci.yml'
   pull_request:
     branches: [ main ]
     paths:
       - 'message-mesh-svc/**'
-      - '.github/workflows/backend-ci.yml'
+      - '.github/workflows/message-mesh-svc-ci.yml'
 
 jobs:
   build:
