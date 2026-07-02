@@ -82,7 +82,7 @@ export function AdminUsersPage() {
     size: pageSize,
   });
 
-  const users = data?.content ?? [];
+  const users = useMemo(() => data?.content ?? [], [data]);
   const totalElements = data?.totalElements ?? 0;
   const totalPages = data?.totalPages ?? 0;
   const canPrev = page > 0;
