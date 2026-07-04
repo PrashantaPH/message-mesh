@@ -16,7 +16,7 @@ export class StompClient {
 
   constructor(token: string) {
     this.client = new Client({
-      webSocketFactory: () => new SockJS('/ws'),
+      webSocketFactory: () => new SockJS('https://message-mesh-dev.onrender.com/ws'),
       connectHeaders: { Authorization: `Bearer ${token}` },
       reconnectDelay: 3000,
       heartbeatIncoming: 10000,
