@@ -2,7 +2,7 @@ import axios from 'axios';
 import { getToken, useAuthStore } from '../store/authStore';
 
 export const axiosClient = axios.create({
-  baseURL: '/',
+  baseURL: 'https://message-mesh-dev.onrender.com/',
   headers: { 'Content-Type': 'application/json' },
 });
 
