@@ -44,8 +44,8 @@ public class OpenApiConfig {
                                 .url("http://localhost:" + serverPort)
                                 .description("Local development server"),
                         new Server()
-                                .url("https://api.message-mesh.prod.com")
-                                .description("Production server")
+                                .url("https://message-mesh-dev.onrender.com")
+                                .description("Development server")
                 ))
                 .tags(List.of(
                         new Tag()
